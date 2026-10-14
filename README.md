@@ -16,9 +16,14 @@ No build step: plain HTML with inline CSS. Edit the files and push to `main`; Gi
 
 ## Consent-screen URLs (keep in sync with Google Cloud)
 
-- Application home page: `https://www.makeafriend.net`
-- Privacy policy: `https://www.makeafriend.net/privacy`
-- Terms of service: `https://www.makeafriend.net/tos`
+- Application home page: `https://www.makeafriend.net/`
+- Privacy policy: `https://www.makeafriend.net/privacy/`
+- Terms of service: `https://www.makeafriend.net/tos/`
+
+**Use the trailing-slash form.** GitHub Pages serves each page from a directory, so the
+no-slash URL (`/privacy`) answers with `301 → /privacy/` and only then `200`; the trailing-slash
+URL is a direct `200` with the full content in the initial HTML. Whatever URL is configured on the
+consent screen must return the policy content itself, without a redirect hop.
 
 ## Domain notes
 
