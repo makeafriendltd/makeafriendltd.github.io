@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Make a Friend — Google-connected AI assistant application</title>
-    <meta name="description" content="Make a Friend builds and operates a Google-connected AI assistant application that turns a user's own Gmail and Drive content into answers and drafts on demand. This page is public and explains the app's purpose, how it uses Google data, and links to our Privacy Policy and Terms of Service.">
+    <title>Make a Friend — your personal AI assistant app</title>
+    <meta name="description" content="Make a Friend is a personal AI assistant application that gets everyday work done for you — email, calendar, documents, research and drafting — across only the accounts and services you choose to connect, with your approval before anything consequential. This page is public and explains the app's purpose, how it uses the data you connect (including Google user data), and links to our Privacy Policy and Terms of Service.">
     <meta property="og:site_name" content="Make a Friend">
-    <meta property="og:title" content="Make a Friend — Google-connected AI assistant application">
-    <meta property="og:description" content="A public summary of the Make a Friend AI assistant app: what it does, how it uses Google user data, and where to read our Privacy Policy and Terms of Service.">
+    <meta property="og:title" content="Make a Friend — your personal AI assistant app">
+    <meta property="og:description" content="A public summary of the Make a Friend personal AI assistant app: what it does, how it uses the data you connect, and where to read our Privacy Policy and Terms of Service.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.makeafriend.net/">
     <link rel="canonical" href="https://www.makeafriend.net/">
@@ -19,14 +19,17 @@
           "@type": "Organization",
           "name": "Make a Friend Ltd",
           "url": "https://www.makeafriend.net/",
-          "description": "Software consulting company that builds and operates AI applications and integrates Google and LLM services for business customers.",
+          "description": "Software company that builds and operates a personal AI assistant application and consults on AI integration for business customers.",
           "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "hello@makeafriend.net" }
         },
         {
-          "@type": "WebSite",
+          "@type": "WebApplication",
           "name": "Make a Friend",
           "url": "https://www.makeafriend.net/",
-          "description": "Public home page of the Make a Friend AI assistant application: purpose, Google data usage, privacy policy and terms of service."
+          "applicationCategory": "ProductivityApplication",
+          "operatingSystem": "Web, iOS, Android",
+          "description": "Personal AI assistant application that helps users handle email, calendar, documents, research and drafting across the accounts they connect, with the user's approval before consequential actions.",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
         }
       ]
     }
@@ -50,7 +53,9 @@
       .legal { margin-top:20px; font-size:15px; color:var(--muted); }
       section.block { padding:44px 0; border-top:1px solid var(--line); }
       section.block h2 { font-size:26px; margin:0 0 10px; }
+      section.block h3 { font-size:17px; margin:26px 0 8px; }
       section.block > .wrap > p { color:var(--muted); margin:0 0 24px; max-width:820px; }
+      section.block > .wrap > h3 + p { color:var(--muted); margin:0 0 18px; max-width:820px; }
       .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
       .card { background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:20px; }
       .card h3 { margin:0 0 8px; font-size:17px; }
@@ -58,6 +63,7 @@
       .steps { counter-reset:s; margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; }
       .steps li { background:#fff; border:1px solid var(--line); border-radius:10px; padding:18px; }
       .steps li::before { counter-increment:s; content:"Step " counter(s); display:block; font-weight:700; color:var(--accent); margin-bottom:6px; }
+      ul.plain { max-width:820px; color:var(--muted); }
       footer { border-top:1px solid var(--line); padding:24px 0; color:var(--muted); font-size:14px; }
       footer a { color:var(--accent); text-decoration:none; margin-right:16px; }
       @media (max-width:600px){ .hero h1{font-size:30px;} nav a{margin-left:0;margin-right:18px;} }
@@ -69,8 +75,8 @@
         <a class="brand" href="/">Make a <span>Friend</span></a>
         <nav>
           <a href="#app">Our app</a>
-          <a href="#services">Services</a>
-          <a href="#how">How we work</a>
+          <a href="#data">Your data</a>
+          <a href="#services">Consulting</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
           <a href="/privacy/">Privacy</a>
@@ -82,8 +88,8 @@
     <main>
       <section class="hero">
         <div class="wrap">
-          <h1>Make a Friend — the AI assistant app that works with your Google account.</h1>
-          <p class="lead">Make a Friend is a software consulting company that builds AI applications. Our own product is an AI assistant application that connects to the user's Google account and turns the user's own Gmail and Drive content into answers and drafts on demand. Everything on this page is public — no account, sign-up, or permission is needed to read it.</p>
+          <h1>Make a Friend — a personal AI assistant that gets things done for you.</h1>
+          <p class="lead">Make a Friend is an AI assistant application. You talk to it in plain language; it reads, drafts, plans and follows tasks through on your behalf, working only with the accounts and services you connect for it. You approve anything consequential before it happens, and you can disconnect any account at any time. Everything on this page is public — no sign-up or account is needed to read it.</p>
           <a class="cta" href="#app">What our app does</a>
           <a class="cta alt" href="#contact">Contact us</a>
           <p class="legal">Policies: <a href="/privacy/">Privacy Policy</a> · <a href="/tos/">Terms of Service</a></p>
@@ -93,22 +99,51 @@
       <section class="block" id="app">
         <div class="wrap">
           <h2>Our application</h2>
-          <p>Make a Friend operates an AI assistant web application for business teams. It connects to the user's own Google account through Google's permission screen, and it uses only the Google data the user explicitly allows, to help that user get their work done. Its purpose is to turn information already sitting in the user's own Google account into answers and drafts on demand, instead of making the user search and copy by hand.</p>
-          <p>With the user's permission, the application can:</p>
-          <ul>
-            <li>connect the user's Google Account (name, email address, profile picture) so the app can work on that user's behalf;</li>
-            <li>read and summarize the Gmail messages and Drive files the user chooses, so the user can ask a question in plain language and get an answer drawn from their own content;</li>
-            <li>search that linked Google content to retrieve the right email, thread, or document for a task;</li>
-            <li>draft replies, notes, and documents with AI assistance and, when the user asks, save the result back to the user's Google account.</li>
+          <p>Make a Friend is a general-purpose AI assistant for everyday work and personal admin. Its purpose is to take busywork off your plate: instead of you searching, copying, comparing and chasing things by hand, you give the assistant the task and it does the legwork — then shows you the result for approval. It is not tied to one provider: it works with the accounts, apps and services you choose to connect, and with the AI models we operate and integrate.</p>
+
+          <h3>What it can do</h3>
+          <ul class="plain">
+            <li><strong>Answer and explain:</strong> ask questions in plain language and get answers, definitions, comparisons and step-by-step guidance on demand.</li>
+            <li><strong>Write and draft:</strong> emails, replies, notes, summaries, briefs, plans and documents — in your tone, ready for you to review.</li>
+            <li><strong>Read and summarize:</strong> long email threads, documents and files become short, accurate summaries with the key decisions and deadlines pulled out.</li>
+            <li><strong>Research and compare:</strong> gather information, compare options and produce a recommendation with its reasoning, so you decide faster.</li>
+            <li><strong>Plan and follow through:</strong> break a goal into steps, track the moving parts, prepare what is needed and remind you or follow up at the right moment.</li>
+            <li><strong>Work across your connected accounts:</strong> with your permission, the assistant can work with the services you link — mail, calendar, files and documents, tasks and other tools — so it can act on the information instead of you relaying it.</li>
+            <li><strong>Keep context:</strong> your preferences, ongoing projects and previous decisions are remembered, so you do not repeat yourself; you can review, edit or delete that memory.</li>
           </ul>
-          <p>We request only the Google scopes a feature needs, we use the data solely to deliver that feature for the user who granted it, and we do not sell it or use Gmail and Drive content for advertising. Access can be withdrawn at any time from the user's Google Account permissions page. The <a href="/privacy/">Privacy Policy</a> lists exactly what we collect, how we use and share it, how long we keep it, and how to have it deleted; the <a href="/tos/">Terms of Service</a> cover use of the app and the consulting services.</p>
+
+          <h3>You stay in control</h3>
+          <ul class="plain">
+            <li>You decide which accounts and services the assistant may access — nothing is connected by default.</li>
+            <li>Consequential actions (sending a message, changing or deleting something, booking or spending) are held for your explicit approval.</li>
+            <li>An activity log shows what the assistant did, and every connection can be revoked at any time.</li>
+            <li>AI output can be wrong: treat drafts and findings as proposals and check anything important before you rely on it.</li>
+          </ul>
+
+          <h3>How it works with Google</h3>
+          <p>Google is one of the services you can connect. When you do, the assistant connects to your Google Account through Google's permission screen, and it uses only the Google data you explicitly allow — for example reading and summarizing the Gmail messages and Drive files you choose, searching that content to find the right email or document for a task, and saving drafts or documents back to your account when you ask it to. We request only the Google scopes a feature needs, we use that data solely to deliver the feature for the user who granted it, and we do not sell it or use Gmail and Drive content for advertising.</p>
+
+          <h3>Policies</h3>
+          <p>The <a href="/privacy/">Privacy Policy</a> lists exactly what we collect, how we use and share it, how long we keep it, and how to have it deleted. The <a href="/tos/">Terms of Service</a> cover use of the app and of our consulting services.</p>
+        </div>
+      </section>
+
+      <section class="block" id="data">
+        <div class="wrap">
+          <h2>Your data, in plain words</h2>
+          <p>You choose the connections; we ask for the minimum each feature needs; access can be withdrawn at any time; we never sell your data and never use your mail or file content for advertising.</p>
+          <div class="grid">
+            <div class="card"><h3>Only what you connect</h3><p>Nothing is linked until you link it. The assistant can only see and act on the accounts and services you explicitly authorise, with the scopes each feature requires.</p></div>
+            <div class="card"><h3>Approval before action</h3><p>Sending, changing, deleting, booking or spending is held for your approval. You see what it will do before it does it.</p></div>
+            <div class="card"><h3>Read the full policy</h3><p>Categories of data, purposes, sharing with our model and infrastructure providers, retention periods and your rights are all set out in the <a href="/privacy/">Privacy Policy</a>.</p></div>
+          </div>
         </div>
       </section>
 
       <section class="block" id="services">
         <div class="wrap">
           <h2>What we do for customers</h2>
-          <p>End-to-end AI integration for companies that want working intelligent features, not slideware.</p>
+          <p>Alongside our own assistant, we are a software consulting company. We build AI features into our customers' products.</p>
           <div class="grid">
             <div class="card"><h3>LLM integration</h3><p>Connect ChatGPT-class models to your product: assistants, document Q&amp;A, summarization, classification, and generation pipelines tuned to your domain data.</p></div>
             <div class="card"><h3>Google Workspace &amp; OAuth</h3><p>Secure access to Gmail, Drive, Calendar, and Photos with properly scoped OAuth — including consent-screen, verification, and privacy compliance.</p></div>
@@ -120,28 +155,17 @@
         </div>
       </section>
 
-      <section class="block" id="how">
-        <div class="wrap">
-          <h2>How we work</h2>
-          <ol class="steps">
-            <li><strong>Discover.</strong> A free call to map your data, users, and the decision the application must make better.</li>
-            <li><strong>Prototype.</strong> A working slice in 2–4 weeks you can click through — real data, real users, measurable outcome.</li>
-            <li><strong>Ship &amp; support.</strong> Production deployment with monitoring, documentation, and training for your team.</li>
-          </ol>
-        </div>
-      </section>
-
       <section class="block" id="about">
         <div class="wrap">
           <h2>About Make a Friend</h2>
-          <p>Make a Friend Ltd builds and consults on artificial-intelligence applications for other businesses. Our mission is simple: make powerful AI approachable — a friend, not a black box. We take responsibility for the whole path, from model selection and data plumbing to privacy compliance and launch, so our customers get super-intelligent applications they can trust and keep.</p>
+          <p>Make a Friend Ltd builds and operates AI applications and consults on artificial intelligence for other businesses. Our mission is simple: make powerful AI approachable — a friend, not a black box. We take responsibility for the whole path, from model selection and data plumbing to privacy compliance and launch, so people get intelligent applications they can trust and keep.</p>
         </div>
       </section>
 
       <section class="block" id="contact">
         <div class="wrap">
           <h2>Contact</h2>
-          <p>Tell us what your application needs to do. We reply within one business day.<br>
+          <p>Questions about the app, or a project to discuss? We reply within one business day.<br>
           Email: <a href="mailto:hello@makeafriend.net">hello@makeafriend.net</a><br>
           Web: <a href="https://www.makeafriend.net/">www.makeafriend.net</a></p>
         </div>

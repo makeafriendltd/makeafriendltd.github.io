@@ -7,8 +7,8 @@ Used as the public OAuth consent-screen surface (home page, privacy policy, term
 
 | URL | File | Purpose |
 | --- | --- | --- |
-| `/` | `index.html` | Public home page: what the company does, what the AI assistant application does with Google data, contact. No login. |
-| `/privacy` | `privacy/index.html` | Privacy Policy (canonical). Data collected, purposes, Google API Limited Use commitments, retention, rights. |
+| `/` | `index.html` | Public home page: what the AI assistant application does, the data controls, Google data use, consulting services, contact. No login. |
+| `/privacy` | `privacy/index.html` | Privacy Policy (canonical). Data categories incl. connected-service and Google user data, purposes, Google API Limited Use commitments, retention, rights. |
 | `/policy` | `policy/index.html` | Same Privacy Policy content, kept so an older consent-screen link still resolves. Canonical points to `/privacy`. |
 | `/tos` | `tos/index.html` | Terms of Service. |
 
