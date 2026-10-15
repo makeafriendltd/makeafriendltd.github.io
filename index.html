@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Make a Friend — your personal AI assistant app</title>
-    <meta name="description" content="Make a Friend is a personal AI assistant application that gets everyday work done for you — email, calendar, documents, research and drafting — across only the accounts and services you choose to connect, with your approval before anything consequential. This page is public and explains the app's purpose, how it uses the data you connect (including Google user data), and links to our Privacy Policy and Terms of Service.">
-    <meta property="og:site_name" content="Make a Friend">
-    <meta property="og:title" content="Make a Friend — your personal AI assistant app">
-    <meta property="og:description" content="A public summary of the Make a Friend personal AI assistant app: what it does, how it uses the data you connect, and where to read our Privacy Policy and Terms of Service.">
+    <title>Makeafriend AI Assistant — local-first personal assistance</title>
+    <meta name="description" content="Makeafriend AI Assistant helps with research, writing, summaries and everyday tasks. Choose your model and optional connections. Assistant data is saved as local files in your environment, not in a Makeafriend-hosted online database.">
+    <meta property="og:site_name" content="Makeafriend AI Assistant">
+    <meta property="og:title" content="Makeafriend AI Assistant — local-first personal assistance">
+    <meta property="og:description" content="A personal AI assistant with user-selected models and local-file storage. Learn what it does, how optional Google connections work, and when a hosted model receives task inputs.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.makeafriend.net/">
     <link rel="canonical" href="https://www.makeafriend.net/">
@@ -19,15 +19,15 @@
           "@type": "Organization",
           "name": "Make a Friend Ltd",
           "url": "https://www.makeafriend.net/",
-          "description": "Software company that builds and operates a personal AI assistant application and consults on AI integration for business customers.",
+          "description": "Software company developing Makeafriend AI Assistant and providing AI integration consulting for business customers.",
           "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "hello@makeafriend.net" }
         },
         {
-          "@type": "WebApplication",
-          "name": "Make a Friend",
+          "@type": "SoftwareApplication",
+          "name": "Makeafriend AI Assistant",
           "url": "https://www.makeafriend.net/",
           "applicationCategory": "ProductivityApplication",
-          "description": "Personal AI assistant application that helps users handle email, calendar, documents, research and drafting across the accounts they connect, with the user's approval before consequential actions."
+          "description": "Local-first personal AI assistant for research, writing, planning and connected-service tasks, with models selected by the user and application data stored in the user's environment."
         }
       ]
     }
@@ -58,9 +58,6 @@
       .card { background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:20px; }
       .card h3 { margin:0 0 8px; font-size:17px; }
       .card p { margin:0; color:var(--muted); font-size:15px; }
-      .steps { counter-reset:s; margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; }
-      .steps li { background:#fff; border:1px solid var(--line); border-radius:10px; padding:18px; }
-      .steps li::before { counter-increment:s; content:"Step " counter(s); display:block; font-weight:700; color:var(--accent); margin-bottom:6px; }
       ul.plain { max-width:820px; color:var(--muted); }
       footer { border-top:1px solid var(--line); padding:24px 0; color:var(--muted); font-size:14px; }
       footer a { color:var(--accent); text-decoration:none; margin-right:16px; }
@@ -70,7 +67,7 @@
   <body>
     <header class="site">
       <div class="wrap">
-        <a class="brand" href="/">Make a <span>Friend</span></a>
+        <a class="brand" href="/">Makeafriend AI Assistant</a>
         <nav>
           <a href="#app">Our app</a>
           <a href="#data">Your data</a>
@@ -86,9 +83,9 @@
     <main>
       <section class="hero">
         <div class="wrap">
-          <h1>Make a Friend — your personal AI assistant for research, writing and everyday tasks.</h1>
-          <p class="lead">Make a Friend helps you ask questions, research options, write and summarize documents, plan tasks and work with accounts you choose to connect. It is a general-purpose AI assistant, not just a Google integration. Make a Friend Ltd also provides software consulting to help businesses integrate AI into their products.</p>
-          <p>This is the application's public homepage. You do not need to sign in, create an account or connect Google to read about the app or its policies. Any authentication needed to use your private assistant happens separately; this page does not request access to your accounts.</p>
+          <h1>Makeafriend AI Assistant — personal assistance, with your data in your environment.</h1>
+          <p class="lead">Research options, write and summarize documents, plan tasks and work with accounts you choose to connect. Choose the AI model that works for you. Makeafriend AI Assistant saves its application data as local files in your own environment, not in an online database operated by Make a Friend Ltd.</p>
+          <p>This is the application's public homepage. No account or Google connection is needed to read about the app or its policies. Optional Google connections and hosted model requests communicate with those services; local-file storage does not mean every task is offline.</p>
           <a class="cta" href="#app">What our app does</a>
           <a class="cta alt" href="#contact">Contact us</a>
           <p class="legal">Policies: <a href="/policy">Privacy Policy</a> · <a href="/tos/">Terms of Service</a></p>
@@ -98,7 +95,7 @@
       <section class="block" id="app">
         <div class="wrap">
           <h2>Our application</h2>
-          <p>Make a Friend is a general-purpose AI assistant for everyday work and personal admin. Its purpose is to take busywork off your plate: instead of you searching, copying, comparing and chasing things by hand, you give the assistant the task and it does the legwork — then shows you the result for approval. It is not tied to one provider: it works with the accounts, apps and services you choose to connect, and with the AI models we operate and integrate.</p>
+          <p>Makeafriend AI Assistant is a general-purpose personal AI assistant for everyday work and personal admin. Ask for help with a question, a draft, a comparison or a plan, and review its results. You choose the models and accounts it works with. The assistant's conversations, preferences, saved memory, configuration and task files stay in the environment you control rather than a Makeafriend-hosted assistant database.</p>
 
           <h3>What it can do</h3>
           <ul class="plain">
@@ -108,26 +105,30 @@
             <li><strong>Research and compare:</strong> gather information, compare options and produce a recommendation with its reasoning, so you decide faster.</li>
             <li><strong>Plan and follow through:</strong> break a goal into steps, track the moving parts, prepare what is needed and remind you or follow up at the right moment.</li>
             <li><strong>Work across your connected accounts:</strong> with your permission, the assistant can work with the services you link — mail, calendar, files and documents, tasks and other tools — so it can act on the information instead of you relaying it.</li>
-            <li><strong>Keep context:</strong> your preferences, ongoing projects and previous decisions are remembered, so you do not repeat yourself; you can review, edit or delete that memory.</li>
+            <li><strong>Keep context locally:</strong> save preferences, ongoing work and previous decisions in files in your environment; you control how long those files are kept and when to remove them.</li>
           </ul>
 
           <h3>You stay in control</h3>
           <ul class="plain">
             <li>You decide which accounts and services the assistant may access — nothing is connected by default.</li>
             <li>Consequential actions (sending a message, changing or deleting something, booking or spending) are held for your explicit approval.</li>
-            <li>An activity log shows what the assistant did, and every connection can be revoked at any time.</li>
+            <li>You control the local files and any backups. Revoke permissions at the connected service when you no longer want the assistant to access it.</li>
             <li>AI output can be wrong: treat drafts and findings as proposals and check anything important before you rely on it.</li>
           </ul>
+
+          <h3>Choose your model</h3>
+          <p>The assistant is model-agnostic: configure a compatible local model or hosted model endpoint rather than being locked to a single provider. A model running entirely in your environment can process its inputs there. A hosted endpoint receives the prompt and task context sent to it, including any relevant connected-service content. That provider's own retention practices and account settings apply; we cannot promise that every external provider stores nothing.</p>
+          <p>If Google data is included, the endpoint must meet Google's Limited Use and no-generalized-training requirements. Do not route Google data to a provider that uses those inputs to train shared models. Use a protected inference endpoint or a local model instead.</p>
 
           <h3>Why the assistant requests Google user data</h3>
           <p>Google is an optional connection, alongside other services you choose to link. Different permissions serve different features; connecting Google for identity does not automatically grant access to Gmail, Drive, Calendar or Contacts.</p>
           <ul class="plain">
-            <li><strong>Account identity:</strong> your name, email address and account identifier identify your account; your profile picture can personalize your profile.</li>
+            <li><strong>Account identity:</strong> your name, email address, account identifier and profile picture identify the Google account connected in your environment; they do not create a Makeafriend-hosted assistant database.</li>
             <li><strong>Gmail:</strong> authorized message content and metadata let the assistant find an email, summarize a conversation, extract tasks or prepare a reply. Sending or changing mail requires the relevant permission and your approval.</li>
             <li><strong>Drive:</strong> authorized file content and metadata let the assistant find documents, summarize them and answer your questions. Writing a result back requires the relevant permission and your instruction.</li>
             <li><strong>Calendar and Contacts:</strong> when you enable those features, authorized events and contact details help coordinate a schedule or identify the person you ask the assistant to work with. Changes require the relevant permission and your approval.</li>
           </ul>
-          <p>Only enabled features and the permissions you grant apply. Relevant content may be processed by an AI provider to generate your requested result. We do not use Google Workspace data to develop, improve or train non-personalized AI/ML models, or permit providers to do so. We do not sell Google data or use it for advertising. See our <a href="/policy">Privacy Policy</a> for the processing, sharing, retention and deletion details, including how to revoke access.</p>
+          <p>Only enabled features and the permissions you grant apply. Requested content is processed for your task and any saved assistant data is held in your local files. A selected hosted model may receive relevant content for inference; it must not use Google Workspace data to develop, improve or train non-personalized AI/ML models. We do not sell Google data or use it for advertising. The <a href="/policy">Privacy Policy</a> explains local storage, external processing, retention, deletion and revocation.</p>
 
           <h3>Policies</h3>
           <p>The <a href="/policy">Privacy Policy</a> lists what we collect, how we use and share it, how long we keep it, and how to have it deleted. The <a href="/tos/">Terms of Service</a> cover use of the app and of our consulting services.</p>
@@ -137,11 +138,11 @@
       <section class="block" id="data">
         <div class="wrap">
           <h2>Your data, in plain words</h2>
-          <p>You choose the connections; we ask for the minimum each feature needs; access can be withdrawn at any time; we never sell your data and never use your mail or file content for advertising.</p>
+          <p>The assistant's saved data belongs in local files in your environment. Make a Friend Ltd does not operate an online store of your assistant conversations, documents, memory or Google connection credentials. External services still receive requests when you choose to use them.</p>
           <div class="grid">
-            <div class="card"><h3>Only what you connect</h3><p>Nothing is linked until you link it. The assistant can only see and act on the accounts and services you explicitly authorise, with the scopes each feature requires.</p></div>
-            <div class="card"><h3>Approval before action</h3><p>Sending, changing, deleting, booking or spending is held for your approval. You see what it will do before it does it.</p></div>
-            <div class="card"><h3>Read the full policy</h3><p>Categories of data, purposes, sharing with our model and infrastructure providers, retention periods and your rights are all set out in the <a href="/policy">Privacy Policy</a>.</p></div>
+            <div class="card"><h3>Local files, your control</h3><p>Conversations, configuration and saved context remain in your environment. You control file permissions, retention and backups; removing the software may not remove its data files.</p></div>
+            <div class="card"><h3>Your choice of model</h3><p>Use a local model to keep model processing in your environment, or configure a hosted endpoint. Review that endpoint's privacy and retention terms before sending personal content.</p></div>
+            <div class="card"><h3>Deletion and access</h3><p>Delete local files and backup copies you no longer need, and revoke service permissions separately. We cannot remotely erase your local environment. See the <a href="/policy">Privacy Policy</a>.</p></div>
           </div>
         </div>
       </section>
@@ -149,7 +150,7 @@
       <section class="block" id="services">
         <div class="wrap">
           <h2>What we do for customers</h2>
-          <p>Alongside our own assistant, we are a software consulting company. We build AI features into our customers' products.</p>
+          <p>Alongside developing Makeafriend AI Assistant, Make a Friend Ltd provides software consulting to build AI features into customers' products.</p>
           <div class="grid">
             <div class="card"><h3>LLM integration</h3><p>Connect ChatGPT-class models to your product: assistants, document Q&amp;A, summarization, classification, and generation pipelines tuned to your domain data.</p></div>
             <div class="card"><h3>Google Workspace &amp; OAuth</h3><p>Secure access to Gmail, Drive, Calendar, and Photos with properly scoped OAuth — including consent-screen, verification, and privacy compliance.</p></div>
@@ -164,7 +165,7 @@
       <section class="block" id="about">
         <div class="wrap">
           <h2>About Make a Friend</h2>
-          <p>Make a Friend Ltd builds and operates AI applications and consults on artificial intelligence for other businesses. Our mission is simple: make powerful AI approachable — a friend, not a black box. We take responsibility for the whole path, from model selection and data plumbing to privacy compliance and launch, so people get intelligent applications they can trust and keep.</p>
+          <p>Make a Friend Ltd develops Makeafriend AI Assistant and consults on artificial intelligence for businesses. We help customers integrate models, data and existing tools into useful applications. Our assistant is local-first and model-agnostic, so users choose their environment and model rather than storing their assistant data in a service operated by us.</p>
         </div>
       </section>
 
