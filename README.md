@@ -9,8 +9,8 @@ and terms for Google OAuth branding verification.
 | URL | File | Purpose |
 | --- | --- | --- |
 | `/` | `index.html` | Public home page: local-first AI assistance, user-selected models, optional connections, consulting and contact. No login. |
-| `/policy` | `policy/index.html` | Submitted Privacy Policy. Local files, model-endpoint transfers, Google Limited Use, user-controlled retention and deletion. Canonical is `/policy/`. |
-| `/privacy/` | `privacy/index.html` | Full copy of the same policy for previously published links; canonical points to `/policy/`. Keep both policy files identical. |
+| `/privacy` | `privacy/index.html` | Privacy Policy URL in the latest verification finding. Local files, model-endpoint transfers, Google Limited Use, retention and deletion. Canonical is `/privacy/`. |
+| `/policy/` | `policy/index.html` | Full policy copy for older published links; canonical points to `/privacy/`. Keep both policy files identical. |
 | `/tos` | `tos/index.html` | Terms of Service. |
 
 No build step: plain HTML with inline CSS. Edit the files and push to `main`; GitHub Pages serves them.
@@ -34,13 +34,15 @@ Limited Use and no-generalized-training protections, regardless of model choice.
 ## Consent-screen URLs (keep in sync with Google Cloud)
 
 - Application home page: `https://www.makeafriend.net/`
-- Privacy policy: `https://www.makeafriend.net/policy`
+- Privacy policy: `https://www.makeafriend.net/privacy`
 - Terms of service: `https://www.makeafriend.net/tos/`
 
-The homepage links to the exact privacy-policy URL supplied for this verification attempt.
-GitHub Pages redirects `/policy` to `/policy/`, where the full HTML policy is served.
-A direct `200` is available at `/policy/` if the Console URL and all homepage links are changed
-together. A normal trailing-slash redirect is not proof of the cause of Google's rejection.
+The latest reported verification URL is `/privacy`; earlier attempts named `/policy`.
+Homepage and Terms links now use the exact `/privacy` URL, and both policy copies declare
+`/privacy/` as canonical. GitHub Pages redirects `/privacy` to `/privacy/` to serve the HTML.
+Do not treat that ordinary directory redirect as proof of the cause of Google's rejection.
+Keep the saved Branding fields, homepage links and canonical route consistent rather than
+switching between paths in successive attempts.
 
 ## Domain notes
 
@@ -68,6 +70,13 @@ together. A normal trailing-slash redirect is not proof of the cause of Google's
 - If the automated findings persist for these publicly readable pages, request manual review or
   reply to Google's verification email with the URLs and the changes made. A browser smoke check
   does not prove that Google's reviewer saw the same response or that branding was approved.
+
+For a recurring finding after deployment, obtain the actual Google Cloud project ID, the saved
+and draft Branding fields, requested OAuth scopes, and the verification attempt timestamp.
+In Cloudflare request/security events for that time, inspect the hostname, URI, action, status,
+user agent and Ray ID to distinguish the intended public pages from an authentication endpoint
+or an actual challenge. Do not assume that spoofing a Googlebot user agent reproduces Google's
+reviewer, and do not disable zone-wide security based only on the rejection banner.
 
 Guidance: [Privacy Policy](https://support.google.com/cloud/answer/13806988) and
 [App Homepage](https://support.google.com/cloud/answer/13807376).
