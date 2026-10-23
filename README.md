@@ -56,6 +56,58 @@ switching between paths in successive attempts.
 - Google Search Console TXT records are verification tokens, not proof that the correct Google
   account completed verification or has access to the OAuth project.
 
+## Publishing status is not verification approval
+
+Audience → **Publish app** changes a client's publishing status from Testing to In production.
+Branding review and any required sensitive/restricted-scope review are separate processes.
+The status label "In production" is not the same as Google's policy definition of a production
+app, which excludes genuine personal use. Do not mark a publicly distributed assistant as
+personal use just because its data is stored locally.
+
+[Rclone's current instructions](https://rclone.org/drive/#making-your-own-client-id) explicitly
+describe homepage and privacy-policy fields blocking publishing even for a personal client.
+[Google documents a personal-use verification exception](https://developers.google.com/identity/protocols/oauth2/production-readiness/brand-verification#personal-use).
+That exception is not evidence that the Console will accept missing Branding fields.
+The [August report](https://forum.rclone.org/t/cant-configure-google-drive-client-id/54191)
+and [October report](https://discuss.google.dev/t/personal-use-desktop-oauth-publish-app-disabled-with-no-branding-field-error/407592)
+describe the UI behavior; they are not an official rollout announcement or a guarantee that a
+particular client can publish without review.
+
+For this application, keep the existing project/client and use:
+
+| Branding field | Value |
+| --- | --- |
+| App name | `Makeafriend AI Assistant` |
+| Application home page | `https://www.makeafriend.net/` |
+| Privacy policy | `https://www.makeafriend.net/privacy` |
+| Terms of service | `https://www.makeafriend.net/tos/` |
+| Authorized domain | `makeafriend.net` (no scheme, path or `www`) |
+| User support / developer email | A reachable address controlled by the project owner; confirm routing before using a domain alias. |
+
+Save Branding, then check Audience → Publish app. If the button is still disabled, inspect the
+actual saved fields and project ID rather than changing the public site's purpose or copying a
+sample policy. Domain verification must be completed by an account associated with the project.
+This site already uses an owned domain; a new free site or a different paid domain is unnecessary.
+
+After the Console confirms In production, obtain a fresh authorization using the existing gog
+configuration and its `--force-consent` option. A status change does not reissue tokens obtained
+while the client was in Testing. Use the scopes required by your actual gog operation, not a
+broader scope list copied from rclone's Drive example.
+Publishing and authorization cannot be completed by a website deployment; keep client secrets
+and tokens outside this public repository.
+
+Google's [OAuth policy](https://developers.google.com/identity/protocols/oauth2/policies#handle-user-tokens-securely)
+requires encrypted token storage at rest even for local deployments. Verify the actual token
+backend before authorizing; this static site does not implement or certify token encryption.
+
+## Public contact links
+
+Email links are wrapped in Cloudflare's documented `<!--email_off-->…<!--/email_off-->` markers.
+This preserves native `mailto:` links without JavaScript; encoding only `@` as an HTML entity
+did not stop Cloudflare rewriting the link. Keep the exclusions when editing contact or
+deletion-request addresses. This improves accessibility, not proof of Google's approval.
+See [Cloudflare Email Address Obfuscation](https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/).
+
 ## Before resubmitting
 
 - Use the public `www` homepage, not an application or authentication URL that requires login.
